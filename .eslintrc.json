@@ -2,5 +2,10 @@
   "extends": [
     "next/core-web-vitals",
     "eslint-config-google"
-  ]
+  ],
+  "rules": {
+    "semi": ["warn", "never"],
+    "object-curly-spacing": ["warn", "always"],
+    "require-jsdoc": "off"
+  }
 }
