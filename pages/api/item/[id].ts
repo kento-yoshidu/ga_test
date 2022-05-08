@@ -14,7 +14,7 @@ const getSingleItem: NextApiHandler = async (req, res) => {
       item: item
     })
   } catch (err) {
-    console.log(err)
+    return res.status(400).send({ message: "読み取り失敗" })
   }
 }
 

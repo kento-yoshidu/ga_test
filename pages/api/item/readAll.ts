@@ -13,7 +13,7 @@ const getAllItems: NextApiHandler = async (req, res) => {
       allItems: allItems
     })
   } catch (err) {
-    console.log(err)
+    return res.status(400).send({ message: "アイテム読み取り失敗" })
   }
 }
 

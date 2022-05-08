@@ -33,9 +33,8 @@ const loginUser: NextApiHandler = async (req, res) => {
     } else {
       return res.status(400).json({ message: "ユーザーが存在していません。"})
     }
-
   } catch (err) {
-    res.status(400).json({ messsage: "ログイン失敗"})
+    res.status(400).json({ message: "ログイン失敗"})
   }
 }
 
