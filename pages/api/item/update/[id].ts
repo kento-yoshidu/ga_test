@@ -13,7 +13,7 @@ const updateItem: NextApiHandler = async (req, res) => {
 
     return res.status(200).send({ message: "アイテム編集"})
   } catch (err) {
-    console.log(err)
+    return res.status(400).send({ message: "アイテム編集失敗"})
   }
 }
 

@@ -13,7 +13,9 @@ const registerUser: NextApiHandler = async (req, res) => {
       message: "ユーザー登録成功"
     })
   } catch (err) {
-    console.log(err)
+    return res.status(400).json({
+      message: "ユーザー登録失敗"
+    })
   }
 }
 
