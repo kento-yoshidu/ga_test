@@ -7,6 +7,8 @@
     "semi": ["warn", "never"],
     "object-curly-spacing": ["warn", "always"],
     "quotes": ["warn", "double"],
+    "comma-dangle": ["warn", "never"],
+    "max-len": "off",
     "require-jsdoc": "off"
   }
 }
