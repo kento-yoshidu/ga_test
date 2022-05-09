@@ -1,0 +1,20 @@
+import connectDB from "../../../utils/database"
+import { ItemModel } from "../../../utils/schemaModels"
+
+import type { NextApiHandler } from "next"
+
+const getSingleItem: NextApiHandler = async (req, res) => {
+  try {
+    await connectDB()
+
+    const item = await ItemModel.findById(req.query.id)
+
+    console.log("singleitem", item)
+
+    return res.status(200).send({ message: "アイテム読み取り成功" })
+  } catch (err) {
+    return res.status(400).send({ message: "アイテム読み取り失敗" })
+  }
+}
+
+export default getSingleItem
