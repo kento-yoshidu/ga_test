@@ -12,7 +12,6 @@ const Home: NextPage = () => (
         メールアドレス : <input type="text" name="email" /> <br />
         <button type="submit">登録</button>
       </form>
-
     </section>
   </>
 )
