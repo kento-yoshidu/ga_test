@@ -6,6 +6,7 @@
   "rules": {
     "semi": ["warn", "never"],
     "object-curly-spacing": ["warn", "always"],
+    "quotes": ["warn", "double"],
     "require-jsdoc": "off"
   }
 }
