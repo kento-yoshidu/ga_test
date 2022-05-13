@@ -25,6 +25,13 @@ const Home: NextPage = () => (
         <button type="submit">登録</button>
       </form>
     </section>
+
+    <section>
+      <h1>Item削除</h1>
+      <form action="http://localhost:3000/api/item/delete/6278fa96115ec38f465de5cf" method="POST">
+        <button type="submit">削除</button>
+      </form>
+    </section>
   </>
 )
 
