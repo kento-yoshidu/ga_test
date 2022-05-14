@@ -1,5 +1,6 @@
 import connectDB from "../../../../utils/database"
 import { ItemModel } from "../../../../utils/schemaModels"
+import auth from "../../../../utils/auth"
 
 import type { NextApiHandler } from "next"
 
@@ -21,4 +22,4 @@ const deleteItem: NextApiHandler = async (req, res) => {
   }
 }
 
-export default deleteItem
+export default auth(deleteItem)
