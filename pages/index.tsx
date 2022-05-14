@@ -5,7 +5,7 @@ import type { NextPage } from "next"
 const Home: NextPage = () => (
   <>
     <section>
-      <Link href="/userregister">ユーザー登録画面へ</Link>
+      <Link href="/user">ユーザー登録画面へ</Link>
     </section>
     <section>
       <h1>Item登録</h1>
