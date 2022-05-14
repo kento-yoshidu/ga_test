@@ -20,7 +20,11 @@ const auth = (handler) => {
     try {
       const decoded = jwt.verify(token, `${process.env.JWT_SECRET_KEY}`)
 
-      console.log("decded is", decoded)
+      console.log(decoded)
+
+      req.body.email = decoded.email
+
+      return handler(req, res)
     } catch (err) {
       return res.status(401).json({
         message: "トークンが正しくありません。"
