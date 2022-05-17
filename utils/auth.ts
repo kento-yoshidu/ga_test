@@ -2,14 +2,14 @@ import jwt from "jsonwebtoken"
 
 import type { NextApiRequest, NextApiResponse } from "next"
 
-const auth = (handler) => {
+const auth = (handler: any) => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "GET") {
       return handler(req, res)
     }
 
     // const token = await req.headers.authorization?.split(" ")[1]
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRvX3lvc2hpZHVAeWFob28uY28uanAiLCJpYXQiOjE2NTI0NDM0NjYsImV4cCI6MTY1MjYxNjI2Nn0.qi8_GFwvMjMH_CGAPxxEhPErunA89Z2wvV9xs2wlhd4"
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRvX3lvc2hpZHVAeWFob28uY28uanAiLCJpYXQiOjE2NTI3ODM3OTYsImV4cCI6MTY1Mjk1NjU5Nn0.JNUQ3ECxbXpMQsF7ZDGrwN4WfkhZ0iYBpKhdwYF0rmg"
 
     if (!token) {
       return res.status(401).json({
