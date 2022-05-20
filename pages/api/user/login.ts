@@ -21,8 +21,6 @@ const loginUser: NextApiHandler = async (req, res) => {
 
         const token = jwt.sign(payload, `${process.env.JWT_SECRET_KEY}`, { expiresIn: "2d" })
 
-        console.log(token)
-
         return res.status(200).json({
           message: "ログイン成功",
           user: loginUser,
