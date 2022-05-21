@@ -1,12 +1,40 @@
 import Link from "next/link"
+import Image from "next/image"
 
 import type { NextPage } from "next"
 
-const Home: NextPage = ({ allItems }) => {
+interface Item {
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  image: string;
+}
+
+const Home: NextPage = ({ allItems }: { allItems: Item[] }) => {
   console.log({ allItems })
 
   return (
     <>
+      {allItems.map((item) => (
+        <Link
+          href=""
+          key={item.id}
+        >
+          <a>
+            <Image
+              width="450px"
+              height="200px"
+              src={`/${item.image}`}
+              alt="item-image"
+            />
+            <h2>{item.price}</h2>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </a>
+        </Link>
+      ))}
+
       <section>
         <Link href="/user">ユーザー登録画面へ</Link>
       </section>
