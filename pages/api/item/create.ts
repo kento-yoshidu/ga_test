@@ -1,6 +1,6 @@
 import connectDB from "../../../utils/database"
 import { ItemModel } from "../../../utils/schemaModels"
-// import auth from "../../../utils/auth"
+import auth from "../../../utils/auth"
 
 import type { NextApiHandler } from "next"
 
@@ -16,4 +16,4 @@ const createItem: NextApiHandler = async (req, res) => {
   }
 }
 
-export default createItem
+export default auth(createItem)
