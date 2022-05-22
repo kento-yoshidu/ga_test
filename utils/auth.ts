@@ -8,8 +8,9 @@ const auth = (handler: any) => {
       return handler(req, res)
     }
 
-    // const token = await req.headers.authorization?.split(" ")[1]
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRvX3lvc2hpZHVAeWFob28uY28uanAiLCJpYXQiOjE2NTI3ODM3OTYsImV4cCI6MTY1Mjk1NjU5Nn0.JNUQ3ECxbXpMQsF7ZDGrwN4WfkhZ0iYBpKhdwYF0rmg"
+    const token = await req.headers.authorization?.split(" ")[1]
+
+    console.log({ token })
 
     if (!token) {
       return res.status(401).json({
