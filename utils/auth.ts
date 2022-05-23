@@ -10,8 +10,6 @@ const auth = (handler: any) => {
 
     const token = await req.headers.authorization?.split(" ")[1]
 
-    console.log({ token })
-
     if (!token) {
       return res.status(401).json({
         message: "トークンがありません"
@@ -20,8 +18,6 @@ const auth = (handler: any) => {
 
     try {
       const decoded = jwt.verify(token, `${process.env.JWT_SECRET_KEY}`)
-
-      console.log(decoded)
 
       req.body.email = decoded.email
 
