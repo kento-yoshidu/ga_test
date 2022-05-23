@@ -1,15 +1,17 @@
 import React, { useState } from "react"
+import type { GetServerSideProps } from "next"
 
-const CreateItem = () => {
-  const [title, setTitle] = useState<string>("")
-  const [price, setPrice] = useState<number>(0)
-  const [description, setDescription] = useState<string>("")
+const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
+  console.log(singleItem)
+  const [title, setTitle] = useState<string>(singleItem.title)
+  const [price, setPrice] = useState<number>(singleItem.price)
+  const [description, setDescription] = useState<string>(singleItem.description)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:3000/api/item/create", {
+      const response = await fetch(`http://localhost:3000/api/item/update/${singleItem._id}`, {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -33,7 +35,7 @@ const CreateItem = () => {
 
   return (
     <>
-      <h1>Item登録</h1>
+      <h1>Item編集</h1>
       <form onSubmit={handleSubmit}>
         タイトル :
         <input
@@ -62,4 +64,14 @@ const CreateItem = () => {
   )
 }
 
-export default CreateItem
+export default UpdateItem
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const response = await fetch(`http://localhost:3000/api/item/${context.query.id}`)
+
+  const singleItem = await response.json()
+
+  return {
+    props: singleItem
+  }
+}
