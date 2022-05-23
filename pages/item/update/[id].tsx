@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import type { GetServerSideProps } from "next"
 
 const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
-  console.log(singleItem)
   const [title, setTitle] = useState<string>(singleItem.title)
   const [price, setPrice] = useState<number>(singleItem.price)
   const [description, setDescription] = useState<string>(singleItem.description)

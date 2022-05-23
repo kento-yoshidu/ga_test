@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import type { GetServerSideProps } from "next"
 
 const ReadSingleItem = ({ singleItem }: { singleItem: Item }) => (
@@ -6,6 +7,12 @@ const ReadSingleItem = ({ singleItem }: { singleItem: Item }) => (
     <p>{singleItem.title}</p>
     <p>{singleItem.price}</p>
     <p>{singleItem.description}</p>
+
+    <div>
+      <Link href={`/item/update/${singleItem._id}`}>アイテム編集</Link>
+
+      <Link href={`/item/delete/${singleItem._id}`}>アイテム削除</Link>
+    </div>
   </>
 )
 
