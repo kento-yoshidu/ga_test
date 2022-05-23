@@ -5,7 +5,7 @@ const Register = () => {
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
@@ -31,7 +31,6 @@ const Register = () => {
     <>
       <h1>ユーザー登録</h1>
 
-      {/* @ts-ignore */}
       <form onSubmit={handleSubmit}>
         <input
           value={name}

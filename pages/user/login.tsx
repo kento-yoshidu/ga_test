@@ -6,7 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
