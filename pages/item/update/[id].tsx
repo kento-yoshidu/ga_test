@@ -3,7 +3,7 @@ import type { GetServerSideProps } from "next"
 
 const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
   const [title, setTitle] = useState<string>(singleItem.title)
-  const [price, setPrice] = useState<number>(singleItem.price)
+  const [price, setPrice] = useState<string | number>(singleItem.price)
   const [description, setDescription] = useState<string>(singleItem.description)
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 const CreateItem = () => {
   const [title, setTitle] = useState<string>("")
-  const [price, setPrice] = useState<number>(0)
+  const [price, setPrice] = useState<string>("")
   const [description, setDescription] = useState<string>("")
 
   const handleSubmit = async (e: React.FormEvent) => {
