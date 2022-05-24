@@ -9,7 +9,7 @@ const Register = () => {
     e.preventDefault()
 
     try {
-      fetch("http://localhost:3000/api/user/register",
+      fetch("https://next-js-app-psi.vercel.app/api/user/register",
           {
             method: "POST",
             headers: {

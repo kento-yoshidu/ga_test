@@ -10,7 +10,7 @@ const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
     e.preventDefault()
 
     try {
-      const response = await fetch(`http://localhost:3000/api/item/update/${singleItem._id}`, {
+      const response = await fetch(`https://next-js-app-psi.vercel.app/api/item/update/${singleItem._id}`, {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -66,7 +66,7 @@ const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
 export default UpdateItem
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await fetch(`http://localhost:3000/api/item/${context.query.id}`)
+  const response = await fetch(`https://next-js-app-psi.vercel.app/api/item/${context.query.id}`)
 
   const singleItem = await response.json()
 
