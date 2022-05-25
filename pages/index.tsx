@@ -2,6 +2,7 @@ import React from "react"
 import Link from "next/link"
 
 import ApiFetch from "../lib/apiFetch"
+import { privateDecrypt } from "crypto"
 
 const Home = ({ allItems }: { allItems: Item[] }) => {
   return (
@@ -35,7 +36,7 @@ const Home = ({ allItems }: { allItems: Item[] }) => {
 
       <section>
         <h1>Item編集</h1>
-        <form action="https://next-js-app-psi.vercel.app/api/item/update/627903dd5b3f351b4e0c3cf0" method="POST">
+        <form action={`${process.env.URL}/api/item/update/627903dd5b3f351b4e0c3cf0`} method="POST">
           タイトル : <input type="text" name="title" /> <br />
           画像 : <input type="text" name="image" /> <br />
           価格 : <input type="text" name="price" /> <br />
@@ -46,7 +47,7 @@ const Home = ({ allItems }: { allItems: Item[] }) => {
 
       <section>
         <h1>Item削除</h1>
-        <form action="https://next-js-app-psi.vercel.app/api/item/delete/627903dd5b3f351b4e0c3cf0" method="POST">
+        <form action={`${process.env.URL}/api/item/delete/627903dd5b3f351b4e0c3cf0`} method="POST">
           <button type="submit">削除</button>
         </form>
       </section>
@@ -55,7 +56,7 @@ const Home = ({ allItems }: { allItems: Item[] }) => {
 }
 
 export const getServerSideProps = async () => {
-  const response = await fetch("https://next-js-app-psi.vercel.app/api/item/readAll")
+  const response = await fetch(`${process.env.URL}/api/item/readAll`)
   const allItems = await response.json()
 
   return {
