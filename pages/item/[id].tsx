@@ -17,7 +17,7 @@ const ReadSingleItem = ({ singleItem }: { singleItem: Item }) => (
 )
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await fetch(`https://next-js-app-psi.vercel.app/api/item/${context.query.id}`)
+  const response = await fetch(`${process.env.URL}/api/item/${context.query.id}`)
 
   const singleItem = await response.json()
 

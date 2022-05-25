@@ -9,7 +9,7 @@ const CreateItem = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch("https://next-js-app-psi.vercel.app/api/item/create", {
+      const response = await fetch(`${process.env.URL}/api/item/create`, {
         method: "POST",
         headers: {
           "Accept": "application/json",
