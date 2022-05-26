@@ -34,37 +34,37 @@ const CreateItem = () => {
 
   const loginUser = useAuth()
 
-  console.log(loginUser)
+  if (loginUser) {
+    return (
+      <>
+        <h1>Item登録</h1>
+        <form onSubmit={handleSubmit}>
+          タイトル :
+          <input
+            value={title}
+            type="text"
+            name="title"
+            onChange={(e) => setTitle(e.target.value)}
+          /> <br />
 
-  return (
-    <>
-      <h1>Item登録</h1>
-      <form onSubmit={handleSubmit}>
-        タイトル :
-        <input
-          value={title}
-          type="text"
-          name="title"
-          onChange={(e) => setTitle(e.target.value)}
-        /> <br />
+          <input
+            value={price}
+            type="text"
+            name="price"
+            onChange={(e) => setPrice(e.target.value)}
+          /> <br />
 
-        <input
-          value={price}
-          type="text"
-          name="price"
-          onChange={(e) => setPrice(e.target.value)}
-        /> <br />
-
-        <input
-          value={description}
-          type="text"
-          name="description"
-          onChange={(e) => setDescription(e.target.value)}
-        /> <br />
-        <button>登録</button>
-      </form>
-    </>
-  )
+          <input
+            value={description}
+            type="text"
+            name="description"
+            onChange={(e) => setDescription(e.target.value)}
+          /> <br />
+          <button>登録</button>
+        </form>
+      </>
+    )
+  }
 }
 
 export default CreateItem
