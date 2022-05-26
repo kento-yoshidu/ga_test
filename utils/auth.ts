@@ -17,7 +17,7 @@ const auth = (handler: any) => {
     }
 
     try {
-      const decoded = jwt.verify(token, `${process.env.JWT_SECRET_KEY}`)
+      const decoded = jwt.verify(token, `${process.env.NEXT_PUBLIC_JWT_SECRET_KEY}`)
 
       /* @ts-ignore */
       req.body.email = decoded.email

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import useAuth from "../../utils/useAuth"
 
 const CreateItem = () => {
   const [title, setTitle] = useState<string>("")
@@ -30,6 +31,10 @@ const CreateItem = () => {
       alert(err)
     }
   }
+
+  const loginUser = useAuth()
+
+  console.log(loginUser)
 
   return (
     <>
