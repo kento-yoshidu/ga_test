@@ -21,7 +21,6 @@ const useAuth = () => {
       /* @ts-ignore */
       setLoginUser(decoded.email)
     } catch (err) {
-      window.alert(`${token}, ${secretKey}`)
       router.push("/user/login/")
     }
   }, [router])

@@ -1,5 +1,8 @@
 import React from "react"
+import useAuth from "../../../utils/useAuth"
+
 import type { GetServerSideProps } from "next"
+import { resourceUsage } from "process"
 
 const DeleteItem = ({ singleItem }: { singleItem: Item }) => {
   const handleSubmit = async (e: React.FormEvent) => {
@@ -16,28 +19,34 @@ const DeleteItem = ({ singleItem }: { singleItem: Item }) => {
       })
 
       const jsonData = await response.json()
-
-      alert(jsonData.message)
     } catch (err) {
       alert(err)
     }
   }
 
-  return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h1>Item削除</h1>
+  const loginUser = useAuth()
 
-        <h2>{singleItem.title}</h2>
+  if (loginUser === singleItem.email) {
+    return (
+      <>
+        <form onSubmit={handleSubmit}>
+          <h1>Item削除</h1>
 
-        <h3>{singleItem.price}</h3>
+          <h2>{singleItem.title}</h2>
 
-        <p>{singleItem.description}</p>
+          <h3>{singleItem.price}</h3>
 
-        <button>削除</button>
-      </form>
-    </>
-  )
+          <p>{singleItem.description}</p>
+
+          <button>削除</button>
+        </form>
+      </>
+    )
+  } else {
+    return (
+      <h1>権限がありません</h1>
+    )
+  }
 }
 
 export default DeleteItem
