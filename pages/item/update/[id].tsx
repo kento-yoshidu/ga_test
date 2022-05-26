@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import useAuth from "../../../utils/useAuth"
+
 import type { GetServerSideProps } from "next"
 
 const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
@@ -32,35 +34,43 @@ const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
     }
   }
 
-  return (
-    <>
-      <h1>Item編集</h1>
-      <form onSubmit={handleSubmit}>
-        タイトル :
-        <input
-          value={title}
-          type="text"
-          name="title"
-          onChange={(e) => setTitle(e.target.value)}
-        /> <br />
+  const loginUser = useAuth()
 
-        <input
-          value={price}
-          type="text"
-          name="price"
-          onChange={(e) => setPrice(e.target.value)}
-        /> <br />
+  if (loginUser === singleItem.email) {
+    return (
+      <>
+        <h1>Item編集</h1>
+        <form onSubmit={handleSubmit}>
+          タイトル :
+          <input
+            value={title}
+            type="text"
+            name="title"
+            onChange={(e) => setTitle(e.target.value)}
+          /> <br />
 
-        <input
-          value={description}
-          type="text"
-          name="description"
-          onChange={(e) => setDescription(e.target.value)}
-        /> <br />
-        <button>登録</button>
-      </form>
-    </>
-  )
+          <input
+            value={price}
+            type="text"
+            name="price"
+            onChange={(e) => setPrice(e.target.value)}
+          /> <br />
+
+          <input
+            value={description}
+            type="text"
+            name="description"
+            onChange={(e) => setDescription(e.target.value)}
+          /> <br />
+          <button>登録</button>
+        </form>
+      </>
+    )
+  } else {
+    return (
+      <h1>権限がありません</h1>
+    )
+  }
 }
 
 export default UpdateItem
