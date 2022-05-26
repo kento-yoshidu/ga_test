@@ -2,14 +2,13 @@ import React from "react"
 import useAuth from "../../../utils/useAuth"
 
 import type { GetServerSideProps } from "next"
-import { resourceUsage } from "process"
 
 const DeleteItem = ({ singleItem }: { singleItem: Item }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
-      const response = await fetch(`${process.env.URL}/api/item/delete/${singleItem._id}`, {
+      await fetch(`${process.env.URL}/api/item/delete/${singleItem._id}`, {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -17,8 +16,6 @@ const DeleteItem = ({ singleItem }: { singleItem: Item }) => {
           "authorization": `Bearer ${localStorage.getItem("token")}`
         }
       })
-
-      const jsonData = await response.json()
     } catch (err) {
       alert(err)
     }
