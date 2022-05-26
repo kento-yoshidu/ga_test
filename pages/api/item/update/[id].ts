@@ -8,10 +8,7 @@ const updateItem: NextApiHandler = async (req, res) => {
   try {
     await connectDB()
 
-    console.log(req.query.id)
     const item = await ItemModel.findById(req.query.id)
-
-    console.log("item is ", item)
 
     if (item.email === req.body.email) {
       await ItemModel.updateOne({

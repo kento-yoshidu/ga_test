@@ -12,14 +12,6 @@ const Home = ({ allItems }: { allItems: Item[] }) => {
           key={item.id}
         >
           <a>
-            {/*
-            <Image
-              width="450px"
-              height="200px"
-              src={`/${item.image}`}
-              alt="item-image"
-            />
-            */}
             <h2>{item.price}</h2>
             <h3>{item.title}</h3>
             <p>{item.description}</p>

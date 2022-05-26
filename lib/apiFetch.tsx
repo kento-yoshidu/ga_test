@@ -9,8 +9,6 @@ const ApiFetch = () => {
       const data = await fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:978-4-87311-982-3")
       const json = await data.json()
 
-      console.log(json.items[0].volumeInfo.imageLinks.thumbnail)
-
       setTitle(json.items[0].volumeInfo.imageLinks.thumbnail)
     })()
   }, [])
