@@ -19,7 +19,7 @@ const loginUser: NextApiHandler = async (req, res) => {
           email: req.body.email
         }
 
-        const token = jwt.sign(payload, `${process.env.NEXT_PUBLIC_JWT_SECRET_KEY}`, { expiresIn: "2d" })
+        const token = jwt.sign(payload, `${process.env.NEXT_PUBLIC_JWT_SECRET_KEY}`, { expiresIn: "30d" })
 
         return res.status(200).json({
           message: "ログイン成功",
