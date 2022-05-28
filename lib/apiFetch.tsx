@@ -17,8 +17,8 @@ const ApiFetch = () => {
     <div>
       <Image
         src="http://books.google.com/books/content?id=msLmzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        width="300"
-        height="400"
+        width="200"
+        height="300"
         alt="hoge"
       />
 

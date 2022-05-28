@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 
+import * as Styles from "../../styles/header.module.scss"
+
 const Header = () => {
   const [user, setUser] = useState<string | null>("")
 
@@ -9,7 +11,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header>
+    <header className={Styles.header}>
       <h1>
         { user && (
           <p>{user}さんでログイン中</p>
