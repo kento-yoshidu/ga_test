@@ -1,5 +1,5 @@
 import React from "react"
-import useAuth from "../../../utils/useAuth"
+import useAuth from "../../../../utils/useAuth"
 
 import type { GetServerSideProps } from "next"
 

@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 
-import connectDB from "../../../utils/database"
-import { UserModel } from "../../../utils/schemaModels"
+import connectDB from "../../../../utils/database"
+import { UserModel } from "../../../../utils/schemaModels"
 
 import type { NextApiHandler } from "next"
 

@@ -2,6 +2,8 @@ import type { AppProps } from "next/app"
 
 import Layout from "./components/Layout"
 
+import "../scss/style.scss"
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>

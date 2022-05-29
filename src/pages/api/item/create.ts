@@ -1,6 +1,6 @@
-import connectDB from "../../../utils/database"
-import { ItemModel } from "../../../utils/schemaModels"
-import auth from "../../../utils/auth"
+import connectDB from "../../../../utils/database"
+import { ItemModel } from "../../../../utils/schemaModels"
+import auth from "../../../../utils/auth"
 
 import type { NextApiHandler } from "next"
 
