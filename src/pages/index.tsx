@@ -5,7 +5,7 @@ import Head from "next/head"
 import ApiFetch from "../../lib/apiFetch"
 
 const Home = ({ allItems }: { allItems: Item[] }) => (
-  <>
+  <div>
     <Head>
       <title> 積読改善アプリ</title>
     </Head>
@@ -28,7 +28,7 @@ const Home = ({ allItems }: { allItems: Item[] }) => (
     <section>
       <Link href="/user">ユーザー登録画面へ</Link>
     </section>
-  </>
+  </div>
 )
 
 export const getServerSideProps = async () => {
