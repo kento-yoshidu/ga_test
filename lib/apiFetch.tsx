@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react"
-import Image from "next/image"
+import React from "react"
 
 export async function getSata() {
-  const data = await fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:978-4-87311-681-5")
+  // const data = await fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:978-4-87311-681-5")
 
-  const json = await data.json()
+  // const json = await data.json()
 
-  return <Image src="/hollo.jpg" height={200} width={200} />
+  // return <Image src="/hollo.jpg" height={200} width={200} />
 }
 
 const ApiFetch = () => {
