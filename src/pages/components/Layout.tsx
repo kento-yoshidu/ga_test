@@ -8,13 +8,15 @@ interface Props {
 }
 
 const Layout: React.VFC<Props> = ({ children }) => (
-  <div>
+  <>
     <Header />
 
-    { children }
+    <main style={{ margin: "100px" }}>
+      { children }
+    </main>
 
     <Footer />
-  </div>
+  </>
 )
 
 export default Layout
