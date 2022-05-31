@@ -12,14 +12,23 @@ const Header = () => {
 
   return (
     <header className={Styles.header}>
-      <h1>
-        { user && (
-          <p>{user}さんでログイン中</p>
-        )}
+      <h1 className={Styles.headerTitle}>
         <Link href="/">
           積読改善アプリ
         </Link>
       </h1>
+
+      {user && (
+        <p>{user}さんでログイン中</p>
+      )}
+
+      {!user && (
+        <div>
+          <p>ログインしていません。</p>
+
+          <Link href="/">ログイン</Link>
+        </div>
+      )}
     </header>
   )
 }
