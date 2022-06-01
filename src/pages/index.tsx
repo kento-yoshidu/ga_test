@@ -2,34 +2,40 @@ import React from "react"
 import Link from "next/link"
 import Head from "next/head"
 
-import ApiFetch from "../../lib/apiFetch"
+import Test from "./components/test"
 
-const Home = ({ allItems }: { allItems: Item[] }) => (
-  <div>
-    <Head>
-      <title> 積読改善アプリ</title>
-    </Head>
+import useAuth from "../../utils/useAuth"
 
-    {allItems.map((item) => (
-      <Link
-        href={`/item/${item._id}`}
-        key={item.id}
-      >
-        <a>
-          <h2>{item.price}</h2>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </a>
-      </Link>
-    ))}
+const Home = ({ allItems }: { allItems: Item[] }) => {
+  useAuth()
 
-    <ApiFetch />
+  return (
+    <div>
+      <Head>
+        <title>積読改善アプリ</title>
+      </Head>
 
-    <section>
-      <Link href="/user">ユーザー登録画面へ</Link>
-    </section>
-  </div>
-)
+      {allItems.map((item) => (
+        <Link
+          href={`/item/${item._id}`}
+          key={item.id}
+        >
+          <a>
+            <h2>{item.price}</h2>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </a>
+        </Link>
+      ))}
+
+      <Test />
+
+      <section>
+        <Link href="/user">ユーザー登録画面へ</Link>
+      </section>
+    </div>
+  )
+}
 
 export const getServerSideProps = async () => {
   const response = await fetch(`${process.env.URL}/api/item/readAll`)
