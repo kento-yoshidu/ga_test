@@ -19,14 +19,17 @@ const Header = () => {
       </h1>
 
       {user && (
-        <p>{user}さんでログイン中</p>
+        <>
+          <p>{user}さんでログイン中</p>
+          <Link href="/user/logout">ログアウト</Link>
+        </>
       )}
 
       {!user && (
         <div>
           <p>ログインしていません。</p>
 
-          <Link href="/">ログイン</Link>
+          <Link href="/user/login/">ログイン</Link>
         </div>
       )}
     </header>
