@@ -1,14 +1,35 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
   "extends": [
     "next/core-web-vitals",
-    "eslint-config-google"
+    "eslint-config-google",
+    "plugin:react/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "semi": ["warn", "never"],
     "object-curly-spacing": ["warn", "always"],
     "quotes": ["warn", "double"],
     "comma-dangle": ["warn", "never"],
+    "new-cap": "off",
     "max-len": "off",
     "require-jsdoc": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "18.1.0"
+    }
   }
 }
