@@ -23,6 +23,7 @@
     "object-curly-spacing": ["warn", "always"],
     "quotes": ["warn", "double"],
     "comma-dangle": ["warn", "never"],
+    "new-cap": "off",
     "max-len": "off",
     "require-jsdoc": "off"
   },

@@ -1,9 +1,4 @@
 import React from "react"
-import Link from "next/link"
-import Head from "next/head"
-
-import Test from "./components/test"
-
 // import useAuth from "../../utils/useAuth"
 
 import { useSession, signIn, signOut } from "next-auth/react"
