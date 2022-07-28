@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react"
 import Link from "next/link"
+
+import { useSession, signIn, signOut } from "next-auth/react"
 
 import * as Styles from "../../styles/header.module.scss"
 
 const Header = () => {
-  const [user, setUser] = useState<string | null>("")
-
-  useEffect(() => {
-    setUser(localStorage.getItem("user"))
-  }, [])
+  const { data: session } = useSession()
 
   return (
     <header className={Styles.header}>
@@ -18,19 +15,17 @@ const Header = () => {
         </Link>
       </h1>
 
-      {user && (
+      {session && (
         <>
-          <p>{user}さんでログイン中</p>
-          <Link href="/user/logout">ログアウト</Link>
+          Signed in as {session?.user?.email} <br />
+          <button onClick={() => signOut()}>Sign out</button>
         </>
       )}
-
-      {!user && (
-        <div>
-          <p>ログインしていません。</p>
-
-          <Link href="/user/login/">ログイン</Link>
-        </div>
+      {!session && (
+        <>
+          Not signed in <br />
+          <button onClick={() => signIn()}>Sign in</button>
+        </>
       )}
     </header>
   )
