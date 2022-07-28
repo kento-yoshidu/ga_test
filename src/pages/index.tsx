@@ -1,8 +1,3 @@
-import React from "react"
-// import useAuth from "../../utils/useAuth"
-
-import { useSession, signIn, signOut } from "next-auth/react"
-
 const Home = ({ allItems }: { allItems: Item[] }) => {
   // useAuth()
 
