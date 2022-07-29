@@ -15,7 +15,7 @@ export async function getServerSideProps() {
 }
 
 const ApiFetch = (props: any) => {
-  console.log({ props })
+  console.log(props)
   return (
     <div>
       <h1>test</h1>

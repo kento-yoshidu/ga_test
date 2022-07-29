@@ -13,5 +13,8 @@ const options = {
       /* @ts-ignore */
       clientSecret: process.env.GITHUB_SECRET
     })
-  ]
+  ],
+  pages: {
+    signIn: "/auth/signin"
+  }
 }

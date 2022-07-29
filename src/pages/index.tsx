@@ -1,4 +1,9 @@
+import Test from "./components/test"
+
 const Home = ({ allItems }: { allItems: Item[] }) => {
+  return (
+    <Test />
+  )
   // useAuth()
 
   /*
