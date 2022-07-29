@@ -1,8 +1,8 @@
-import { useRouter } from "next/router"
-import { getProviders, getCsrfToken, useSession, signOut } from "next-auth/react"
+// import { useRouter } from "next/router"
+import { getProviders, getCsrfToken, useSession, signIn, /* signOut */ } from "next-auth/react"
 
 const LoginPage = ({providers, csrfToken }: { providers: any, csrfToken: any }) => {
-  const { error } = useRouter().query
+  // const { error } = useRouter().query
   const { data: session } = useSession()
 
   console.log(providers)
@@ -14,11 +14,16 @@ const LoginPage = ({providers, csrfToken }: { providers: any, csrfToken: any }) 
         // ログイン状態の場合。ユーザー名、ログアウトボタンを表示。
         <>
           <div>ユーザー：{session.user?.name}</div>
-          <button onClick={signOut}>ログアウト</button>
+          {/* <button onClick={signOut}>ログアウト</button> */}
         </>
       ): (
-        <div>未ログイン</div>
-      )}
+        <button onClick={() => {
+          signIn(providers.callbacknUrl)
+        }}>
+          Sign in with Github
+        </button>
+        )
+      }
     </div>
   )
 }
