@@ -12,7 +12,7 @@ const createItem: NextApiHandler = async (req, res) => {
 
     return res.status(200).json({ message: "アイテム作成成功" })
   } catch (err) {
-    res.status(400) .json({ message: "アイテム作成失敗" })
+    res.status(400).json({ message: "アイテム作成失敗" })
   }
 }
 

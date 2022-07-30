@@ -15,15 +15,14 @@ const Header = () => {
         </Link>
       </h1>
 
-      {session && (
+      {session ? (
         <>
           Signed in as {session?.user?.email} <br />
           <button onClick={() => signOut({
             callbackUrl: "/"
           })}>Sign out</button>
         </>
-      )}
-      {!session && (
+      ) : (
         <>
           Not signed in <br />
           <button onClick={() => signIn()}>Sign in</button>

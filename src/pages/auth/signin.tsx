@@ -12,7 +12,7 @@ interface Provider {
   }
 }
 
-const LoginPage = ({ provider }: { provider: Provider }) => {
+const LoginPage = ({ providers }: { providers: Provider }) => {
   const { data: session } = useSession()
 
   return (
@@ -24,11 +24,15 @@ const LoginPage = ({ provider }: { provider: Provider }) => {
           <button onClick={() => signOut()}>ログアウトする</button>
         </>
       ) : (
-        <button onClick={() => {
-          signIn(provider.github.id)
-        }}>
-          Githubアカウントでログインする
-        </button>
+        <>
+          {Object.values(providers).map((provider, i) => (
+            <div key={`div${i}`}>
+              <h2>{provider.id}でログインする</h2>
+
+              <button onClick={() => signIn(provider.id)}>ログイン</button>
+            </div>
+          ))}
+        </>
         )
       }
     </div>
@@ -36,9 +40,9 @@ const LoginPage = ({ provider }: { provider: Provider }) => {
 }
 
 export const getServerSideProps = async (context?: CtxOrReq) => {
-  const provider = await getProviders()
+  const providers = await getProviders()
   return {
-    props: { provider }
+    props: { providers }
   }
 }
 
