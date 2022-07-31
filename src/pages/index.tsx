@@ -1,6 +1,14 @@
+import Link from "next/link"
+
 const Home = ({ allItems }: { allItems: Item[] }) => {
+  console.log(allItems)
   return (
-    <div>Hello World</div>
+    <>
+      <div>Hello World</div>
+
+      <Link href="/item/create">アイテムを作成する</Link>
+    </>
+
   )
 }
 

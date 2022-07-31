@@ -36,7 +36,7 @@ const UpdateItem = ({ singleItem }: { singleItem: Item }) => {
 
   const loginUser = useAuth()
 
-  if (loginUser === singleItem.email) {
+  if (loginUser) {
     return (
       <>
         <h1>Item編集</h1>
