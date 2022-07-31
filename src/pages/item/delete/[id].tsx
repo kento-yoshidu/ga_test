@@ -23,7 +23,7 @@ const DeleteItem = ({ singleItem }: { singleItem: Item }) => {
 
   const loginUser = useAuth()
 
-  if (loginUser === singleItem.email) {
+  if (loginUser) {
     return (
       <>
         <form onSubmit={handleSubmit}>
