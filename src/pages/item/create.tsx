@@ -6,6 +6,7 @@ const CreateItem = () => {
   const [price, setPrice] = useState<string>("")
   const [description, setDescription] = useState<string>("")
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
