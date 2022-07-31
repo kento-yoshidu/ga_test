@@ -29,7 +29,9 @@ const LoginPage = ({ providers }: { providers: Provider }) => {
             <div key={`div${i}`}>
               <h2>{provider.id}でログインする</h2>
 
-              <button onClick={() => signIn(provider.id)}>ログイン</button>
+              <button onClick={() => signIn(provider.id, {
+                callbackUrl: "/"
+              })}>ログイン</button>
             </div>
           ))}
         </>

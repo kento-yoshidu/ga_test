@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import useAuth from "../../../utils/useAuth"
 
 const CreateItem = () => {
   const [title, setTitle] = useState<string>("")
   const [price, setPrice] = useState<string>("")
   const [description, setDescription] = useState<string>("")
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
