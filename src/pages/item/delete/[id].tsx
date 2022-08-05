@@ -31,8 +31,6 @@ const DeleteItem = ({ singleItem }: { singleItem: Item }) => {
 
           <h2>{singleItem.title}</h2>
 
-          <h3>{singleItem.price}</h3>
-
           <p>{singleItem.description}</p>
 
           <button>削除</button>
