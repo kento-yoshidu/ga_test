@@ -1,8 +1,8 @@
 interface Item {
-  _id: string;
-  id: string;
-  title: string;
-  price: number;
-  description: string;
-  email: string;
+  _id: String;
+  id: String;
+  title: String;
+  price: Number;
+  description: String;
+  email: String;
 }
