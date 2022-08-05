@@ -16,7 +16,7 @@ const Books = ({ books }: { books: Books[] }) => (
     {books.map((book) => (
       <div
         key={`${book.id}`}
-        onClick={() => Router.push(`/book/${book.id}`)}
+        onClick={() => Router.push(`/books/${book.id}`)}
       >
         <h2>{book.title}</h2>
         <p>{book.description}</p>

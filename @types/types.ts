@@ -1,4 +1,4 @@
-interface Item {
+export const Item = {
   _id: string;
   id: string;
   title: string;
