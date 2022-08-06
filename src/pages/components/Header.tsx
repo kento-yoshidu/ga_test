@@ -24,8 +24,12 @@ const Header = () => {
         </>
       ) : (
         <>
-          Not signed in <br />
-          <button onClick={() => signIn()}>Sign in</button>
+          <button
+            className={Styles.signInButton}
+            onClick={() => signIn()}
+          >
+            Sign in
+          </button>
         </>
       )}
     </header>

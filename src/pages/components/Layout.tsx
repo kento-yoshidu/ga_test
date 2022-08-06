@@ -1,13 +1,10 @@
 import React from "react"
+import type { ReactNode } from "react"
 
 import Header from "./Header"
 import Footer from "./Footer"
 
-interface Props {
-  children: React.ReactNode
-}
-
-const Layout: React.VFC<Props> = ({ children }) => (
+const Layout = ({ children }: { children: ReactNode }) => (
   <>
     <Header />
 
