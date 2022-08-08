@@ -28,7 +28,7 @@ const Header = () => {
             className={Styles.signInButton}
             onClick={() => signIn()}
           >
-            Sign in
+            login
           </button>
         </>
       )}
