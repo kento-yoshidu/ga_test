@@ -5,7 +5,6 @@
   },
   "extends": [
     "next/core-web-vitals",
-    "eslint-config-google",
     "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
