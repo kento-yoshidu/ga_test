@@ -41,8 +41,9 @@ const LoginPage = ({ providers }: { providers: Provider }) => {
   )
 }
 
-export const getServerSideProps = async (context?: CtxOrReq) => {
+export const getServerSideProps = async () => {
   const providers = await getProviders()
+
   return {
     props: { providers }
   }
