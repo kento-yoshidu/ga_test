@@ -24,7 +24,7 @@
     "comma-dangle": ["warn", "never"],
     "new-cap": "off",
     "max-len": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
   },
   "settings": {
     "react": {
