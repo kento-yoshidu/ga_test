@@ -12,15 +12,6 @@ async function ChangeStatus(id: number, flag: boolean): Promise<void> {
   Router.push(`/books/${id}`)
 }
 
-interface Book {
-  id: number
-  title: string
-  description: string
-  price: number
-  progress: number
-  flag: boolean
-}
-
 const Book = ({ book }: { book: Book }) => (
   <>
     <h1>{book.title}</h1>
