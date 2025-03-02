@@ -6,5 +6,6 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{ github.run_id }}
       - run: echo foo
         if : ${{ contains(github.run_id, '1')}}
