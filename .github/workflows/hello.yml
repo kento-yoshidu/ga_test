@@ -1,9 +1,16 @@
 name: hello
 on: push
+env:
+  TOP: Top env
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World"
       - run: echo ${{ github.actor }}
+      - run: echo env= "${TOP}"
+      - env:
+          TOP: run level
+        run: echo env = "${TOP}"
+
       - uses: actions/checkout@v4
