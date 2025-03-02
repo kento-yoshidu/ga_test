@@ -5,7 +5,6 @@ env:
 jobs:
   print:
     runs-on: ubuntu-latest
-    env:
-      USERNAME: ${{ vars.USERNAME }}
     steps:
-      - run: echo user_name = "${USERNAME}"
+      - run: echo foo
+        if : ${{ contains(github.run_id, '1')}}
