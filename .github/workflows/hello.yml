@@ -8,4 +8,4 @@ jobs:
     steps:
       - run: echo ${{ github.run_id }}
       - run: echo foo
-        if : ${{ contains(github.run_id, '1')}}
+        if : ${{ contains(github.run_id, 's')}}
