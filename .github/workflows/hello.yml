@@ -3,14 +3,9 @@ on: push
 env:
   TOP: Top env
 jobs:
-  hello:
+  print:
     runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ vars.USERNAME }}
     steps:
-      - run: echo "Hello World"
-      - run: echo ${{ github.actor }}
-      - run: echo env= "${TOP}"
-      - env:
-          TOP: run level
-        run: echo env = "${TOP}"
-
-      - uses: actions/checkout@v4
+      - run: user_name = "${USERNAME}"
